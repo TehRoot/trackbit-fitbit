@@ -1,0 +1,6 @@
+<svg>
+  <text id="geolocation-label" class="sensor-label" x="50%" y="30">Coordinates</text>
+  <text id="geolocation-data1" class="sensor-data" x="50%" y="65">{ ... }</text>
+  <text id="geolocation-data2" class="sensor-data" x="50%" y="100">{ ... }</text>
+</svg>
+

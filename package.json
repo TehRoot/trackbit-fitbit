@@ -1,0 +1,22 @@
+{
+  "fitbit": {
+    "appType": "app",
+    "appDisplayName": "Location",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#f44336",
+    "requestedPermissions": [
+      "access_internet"
+      "access_location"
+      "background"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Location"
+      }
+    }
+  }
+}
