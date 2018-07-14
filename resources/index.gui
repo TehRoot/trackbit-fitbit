@@ -1,6 +1,37 @@
 <svg>
-  <text id="geolocation-label" class="sensor-label" x="50%" y="30">Coordinates</text>
-  <text id="geolocation-data1" class="sensor-data" x="50%" y="65">{ ... }</text>
-  <text id="geolocation-data2" class="sensor-data" x="50%" y="100">{ ... }</text>
+  <svg id="data-screen">
+    <text id="geolocation-label" class="sensor-label" x="50%" y="30">Coordinates</text>
+    <text id="geolocation-data1" class="sensor-data" x="50%" y="52">{ ... }</text>
+    <text id="geolocation-data2" class="sensor-data" x="50%" y="73">{ ... }</text>
+    <text id="geolocation-data3" class="sensor-data" x="50%" y="94">{ ... }</text>
+    <text id="geolocation-data4" class="sensor-data" x="50%" y="118">{ ... }</text>
+    <use id="button-left" class="dialog-half-button-left" href="#square-button-icon" y="182" fill="coral">
+      <set href="#text" attributeName="text-buffer" to="Clear"/>
+      <set href="#text" attributeName="text-anchor" to="middle"/>
+    </use>
+    <use id="button-right" class="dialog-half-button-right" href="#square-button-icon" y="182" fill="coral">
+      <set href="#text" attributeName="text-buffer" to="Stop"/>
+      <set href="#text" attributeName="text-anchor" to="middle"/>
+    </use>
+  </svg>
+  <svg id="selection-screen">
+    <rect class="full-size" fill="fb-black" />
+    <use href="#mixed-text-center-mid" class="dialog-mixed-text" fill="fb-white">
+      <set href="#top-padding" attributeName="display" to="none" />
+      <set href="#header/text" attributeName="text-buffer" to="Ready?" />
+      <set href="#header/text" attributeName="fill" to="fb-magenta"/>
+      <set href="#copy/text" attributeName="text-buffer" to="Are you ready to begin working?" />
+      <set href="#bottom-padding" attributeName="display" to="none" />
+    </use>
+    <use id="startButton" class="button-bot" href="#square-button-neutral" fill="coral">
+      <set href="#text" attributeName="text-buffer" to="Start" />
+      <set href="#image" attributeName="href" to="play.png" />
+    </use>
+  </svg>
+  <svg id="stop-screen"
+    <rect class="full-size" fill="fb-black" />
+    <use href=
+  </svg>
 </svg>
+
 
