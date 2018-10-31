@@ -2,9 +2,12 @@
 
 messaging.peerSocket.onmessage = function(evt) {
   var url = "http://localhost:8080/coordinate";
-  //var url = "https://markcardish.ml/coordinate";
-  var url1 = "https://markcardish.ml/clear";
-  console.log(evt.data);
+  var url1 = "http://localhost:8080/clear";
+  var coordinates = new Array();
+  coordinates = evt.data;
+  console.log(coordinates);
+  console.log(coordinates[0], coordinates[1], coordinates[2]);
+  console.log(JSON.stringify(coordinates[0]+","+coordinates[1]+","+coordinates[2]));
   if(evt.data == "clear"){
     fetch(url1, {
       method: 'POST',
@@ -16,7 +19,11 @@ messaging.peerSocket.onmessage = function(evt) {
   } else {
     fetch(url, {
     method: 'POST',
-    body: JSON.stringify(evt.data),
+    body: JSON.stringify({
+      "Latitude": coordinates[0],
+      "Longitude": coordinates[1],
+      "Timestamp": coordinates[2],
+    }),
     headers:{
       'Content-Type':'application/json'
     }

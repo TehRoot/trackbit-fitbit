@@ -1,10 +1,11 @@
 <svg>
-  <svg id="data-screen">
+  <svg id="data-screen"  display="none">
     <text id="geolocation-label" class="sensor-label" x="50%" y="30">Coordinates</text>
-    <text id="geolocation-data1" class="sensor-data" x="50%" y="52">{ ... }</text>
-    <text id="geolocation-data2" class="sensor-data" x="50%" y="73">{ ... }</text>
-    <text id="geolocation-data3" class="sensor-data" x="50%" y="94">{ ... }</text>
-    <text id="geolocation-data4" class="sensor-data" x="50%" y="118">{ ... }</text>
+    <text id="geolocation-data1" class="sensor-data" x="50%" y="51">{ ... }</text>
+    <text id="geolocation-data2" class="sensor-data" x="50%" y="72">{ ... }</text>
+    <text id="geolocation-data3" class="sensor-data" x="50%" y="93">{ ... }</text>
+    <text id="geolocation-data4" class="sensor-data" x="50%" y="117">{ ... }</text>
+    <text id="geolocation-data5" class="sensor-data" x="50%" y="138">{ ... }</text>
     <use id="button-left" class="dialog-half-button-left" href="#square-button-icon" y="182" fill="coral">
       <set href="#text" attributeName="text-buffer" to="Clear"/>
       <set href="#text" attributeName="text-anchor" to="middle"/>
@@ -14,23 +15,57 @@
       <set href="#text" attributeName="text-anchor" to="middle"/>
     </use>
   </svg>
-  <svg id="selection-screen">
+  <svg id="selection-screen"  display="inline">
     <rect class="full-size" fill="fb-black" />
-    <use href="#mixed-text-center-mid" class="dialog-mixed-text" fill="fb-white">
+    <use href="#mixed-text-center-top" class="dialog-mixed-text" fill="fb-white">
       <set href="#top-padding" attributeName="display" to="none" />
       <set href="#header/text" attributeName="text-buffer" to="Ready?" />
       <set href="#header/text" attributeName="fill" to="fb-magenta"/>
-      <set href="#copy/text" attributeName="text-buffer" to="Are you ready to begin working?" />
+      <set href="#copy/text" attributeName="text-buffer" to="Start tracking position?" />
       <set href="#bottom-padding" attributeName="display" to="none" />
     </use>
-    <use id="startButton" class="button-bot" href="#square-button-neutral" fill="coral">
+    <use id="startButton" class="button" href="#square-button-neutral" y="180" fill="coral">
       <set href="#text" attributeName="text-buffer" to="Start" />
       <set href="#image" attributeName="href" to="play.png" />
     </use>
+    <use id="panoButton" class="button" href="#square-button-neutral" y="115" fill="coral">
+      <set href="#text" attributeName="text-buffer" to="List" />
+      <set href="#image" attributeName="href" to="play.png" />
+    </use>
   </svg>
-  <svg id="stop-screen"
+  <svg id="stop-screen" display="none">
     <rect class="full-size" fill="fb-black" />
-    <use href=
+    <use href="#mixed-text-center-mid" class="dialog-mixed-text" fill="fb-white">
+      <set href="#top-padding" attributeName="display" to="none" />
+      <set href="#header/text" attributeName="text-buffer" to="Finished tracking?" />
+      <set href="#header/text" attributeName="fill" to="fb-magenta" />
+      <set href="#bottom-padding" attributeName="display" to="none" />
+    </use>
+    <use id="rightEndButton" class="dialog-half-button-right"  href="#square-button-icon" fill="coral">
+      <set href="#text" attributeName="text-buffer" to="Finished" />
+      <set href="#text" attributeName="text-anchor" to="middle"/>
+      <set href="#image" attributeName="href" to="play.png" />
+    </use>
+    <use id="leftBackButton" class="dialog-half-button-left" href="#square-button-icon" fill="coral">
+      <set href="text" attributeName="text-buffer" to="No" />
+      <set href="#text" attributeName="text-anchor" to="middle"/>
+      <set href="#image" attributeName="href" to="play.png" />
+    </use>
+  </svg>
+  <svg id="results-screen" display="none">
+    <rect class="full-size" fill="fb-black" />
+    <use href="#mixed-text-center-top" class="dialog-mixed-text" fill="fb-white">
+      <set href="#top-padding" attributeName="display" to="none" />
+      <set href="#header/text" attributeName="text-buffer" to="Stats Screen" />
+      <set href="#header/text" attributeName="fill" to="fb-white" />
+      <set href="#bottom-padding" attributeName="display" to="none" />
+      <text id="geolocation-label" class="sensor-label" x="50%" y="50">Coordinates</text>
+    </use>
+    <use id="EndButton" class="button-bot"  href="#square-button-icon" fill="coral">
+      <set href="#text" attributeName="text-buffer" to="Return Main" />
+      <set href="#text" attributeName="text-anchor" to="middle"/>
+      <set href="#image" attributeName="href" to="play.png" />
+    </use>
   </svg>
 </svg>
 

@@ -18,5 +18,8 @@
         "name": "Location"
       }
     }
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~1.0.0"
   }
 }
