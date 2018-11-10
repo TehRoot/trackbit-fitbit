@@ -16,8 +16,8 @@ let geoData4 = geoDataScreen.getElementById("geolocation-data4");
 let startUpScreenButton = startUpScreen.getElementById("startButton");
 let buttonLeft = geoDataScreen.getElementById("button-left");
 let buttonRight = geoDataScreen.getElementById("button-right");
-let endScreenButtonLeft = stopScreen.getElementById("rightEndButton");
-let resultScreenButton = resultsScreen.getElementById("EndButton");
+let endScreenButtonRight = stopScreen.getElementById("rightEndButton");
+let resultScreenButton = resultsScreen.getElementById("endButton");
 
 function waitForPrompt(){
   startUpScreenButton.onclick = function(evt){
@@ -28,11 +28,14 @@ function waitForPrompt(){
 }
 
 //button for ending a track
-endScreenButtonLeft.onclick = function(evt){
+endScreenButtonRight.onclick = function(evt){
   stopScreen.style.display = "none";
   geoDataScreen.style.display = "none";
   resultsScreen.style.display = "inline";
-  geolocation.clearWatch(watchID);
+  if(messaging.peerSocket.readyState === messaging.peerSocket.OPEN){ 
+    messaging.peerSocket.send("finished");
+    geolocation.clearWatch(watchID);
+  }
 }
 
 //button moves to initial ending
@@ -55,6 +58,7 @@ buttonLeft.onclick = function(evt){
   }
 }
 
+//logs error -- transitition to popping up an alert
 messaging.peerSocket.onerror = function(err){
   console.log("Connection Error: " + err.code);
 }
