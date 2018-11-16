@@ -4,8 +4,8 @@
     <text id="geolocation-data1" class="sensor-data" x="50%" y="51">{ ... }</text>
     <text id="geolocation-data2" class="sensor-data" x="50%" y="72">{ ... }</text>
     <text id="geolocation-data3" class="sensor-data" x="50%" y="93">{ ... }</text>
-    <text id="geolocation-data4" class="sensor-data" x="50%" y="117">{ ... }</text>
-    <text id="geolocation-data5" class="sensor-data" x="50%" y="138">{ ... }</text>
+    <text id="geolocation-data4" class="sensor-data" x="50%" y="114">{ ... }</text>
+    <text id="geolocation-data5" class="sensor-data" x="50%" y="134">{ ... }</text>
     <use id="button-left" class="dialog-half-button-left" href="#square-button-icon" y="182" fill="coral">
       <set href="#text" attributeName="text-buffer" to="Clear"/>
       <set href="#text" attributeName="text-anchor" to="middle"/>

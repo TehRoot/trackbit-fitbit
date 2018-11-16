@@ -1,4 +1,12 @@
 {
+  "name": "Location",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~1.0.4",
+    "@fitbit/sdk-cli": "^1.0.2"
+  },
   "fitbit": {
     "appUUID": "f810a1bb-259c-4676-9917-78474cf01a25",
     "appType": "app",
@@ -11,7 +19,8 @@
       "access_internet"
     ],
     "buildTargets": [
-      "higgs"
+      "higgs",
+      "meson"
     ],
     "i18n": {
       "en": {
@@ -19,8 +28,8 @@
       }
     }
   },
-  "devDependencies": {
-    "@fitbit/sdk": "~1.0.0"
-    "@fitbit/sdk-cli": "^1.0.0"
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
   }
 }
