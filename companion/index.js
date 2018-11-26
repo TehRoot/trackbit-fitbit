@@ -8,9 +8,6 @@ messaging.peerSocket.onmessage = function(evt) {
   var url2 = "http://localhost:8080/finished";
   var coordinates = new Array();
   coordinates = evt.data;
-  //console.log(coordinates);
-  //console.log(coordinates[0], coordinates[1], coordinates[2]);
-  //console.log(JSON.stringify(coordinates[0]+","+coordinates[1]+","+coordinates[2]));
   if(evt.data == "clear"){
     fetch(url1, {
       method: 'POST',
@@ -41,10 +38,3 @@ messaging.peerSocket.onmessage = function(evt) {
   });
   }
  }
-
-function generateQuickIdentHash(str){
-  var buffer = new TextEncoder("utf-8").encode(str);
-  return crypto.subtle.digest("SHA-256", buffer).then(function (hash) {
-    return hex(hash);
-  });
-}

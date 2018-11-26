@@ -4,6 +4,7 @@ import * as messaging from "messaging";
 import document from "document";
 
 var watchID;
+let panoramaContainer = document.getElementById("container");
 let startUpScreen = document.getElementById("selection-screen");
 let geoDataScreen = document.getElementById("data-screen");
 let stopScreen = document.getElementById("stop-screen");
@@ -21,13 +22,14 @@ let resultScreenButton = resultsScreen.getElementById("endButton");
 
 function waitForPrompt(){
   startUpScreenButton.onclick = function(evt){
+    panoramaContainer.style.display = "inline";
     startUpScreen.style.display = "none";
     geoDataScreen.style.display = "inline";
     getWatchLocation();
   }
 }
 
-//button for ending a track
+//button for ending a track, displays track data
 endScreenButtonRight.onclick = function(evt){
   stopScreen.style.display = "none";
   geoDataScreen.style.display = "none";
@@ -35,6 +37,7 @@ endScreenButtonRight.onclick = function(evt){
   if(messaging.peerSocket.readyState === messaging.peerSocket.OPEN){ 
     messaging.peerSocket.send("finished");
     geolocation.clearWatch(watchID);
+
   }
 }
 
@@ -87,19 +90,19 @@ function getWatchLocation(){
     geoData3.text = ("Accuracy [Meters]: " +position.coords.accuracy);
     geoData4.text = ("Altitude [Meters]: " +position.coords.altitude);
     geoData5.text = ("Distance Traveled [KM]: "+ (distance/1000).toFixed(2));
+
     if(messaging.peerSocket.readyState === messaging.peerSocket.OPEN && coordinates.length == 3){
         messaging.peerSocket.send(coordinates);
         coordinates.length = 0;
     }
-}  
+}
   function locationError(error){
       console.log("Error: " + error.code, "Message: " + error.message)
     }
 
   function distancePoints(segment){
       let radius = 6371000;
-      let coordinate = segment.reduce((acc, val) => acc.concat(val), []);
-      console.log(coordinate);
+      let coordinate = segment.reduce((acc, val) => acc.concat(val), []); // lol
       let Phi1 = toRadians(coordinate[0]);
       let Phi2 = toRadians(coordinate[2]);
       let DeltaPhi = toRadians(coordinate[2] - coordinate[0]);

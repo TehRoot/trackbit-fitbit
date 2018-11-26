@@ -1,18 +1,34 @@
 <svg>
-  <svg id="data-screen"  display="none">
-    <text id="geolocation-label" class="sensor-label" x="50%" y="30">Coordinates</text>
-    <text id="geolocation-data1" class="sensor-data" x="50%" y="51">{ ... }</text>
-    <text id="geolocation-data2" class="sensor-data" x="50%" y="72">{ ... }</text>
-    <text id="geolocation-data3" class="sensor-data" x="50%" y="93">{ ... }</text>
-    <text id="geolocation-data4" class="sensor-data" x="50%" y="114">{ ... }</text>
-    <text id="geolocation-data5" class="sensor-data" x="50%" y="134">{ ... }</text>
-    <use id="button-left" class="dialog-half-button-left" href="#square-button-icon" y="182" fill="coral">
-      <set href="#text" attributeName="text-buffer" to="Clear"/>
-      <set href="#text" attributeName="text-anchor" to="middle"/>
-    </use>
-    <use id="button-right" class="dialog-half-button-right" href="#square-button-icon" y="182" fill="coral">
-      <set href="#text" attributeName="text-buffer" to="Stop"/>
-      <set href="#text" attributeName="text-anchor" to="middle"/>
+  <svg>
+    <use id="container" href="#panoramaview" display="none">
+      <use id="item1" href="#panoramaview-item">
+        <svg id="data-screen"  display="inline">
+            <text id="geolocation-label" class="sensor-label" x="50%" y="36">Coordinates</text>
+            <text id="geolocation-data1" class="sensor-data" x="50%" y="57">{ ... }</text>
+            <text id="geolocation-data2" class="sensor-data" x="50%" y="78">{ ... }</text>
+            <text id="geolocation-data3" class="sensor-data" x="50%" y="99">{ ... }</text>
+            <text id="geolocation-data4" class="sensor-data" x="50%" y="120">{ ... }</text>
+            <text id="geolocation-data5" class="sensor-data" x="50%" y="140">{ ... }</text>
+            <use id="button-left" class="dialog-half-button-left" href="#square-button-icon" y="182" fill="coral">
+              <set href="#text" attributeName="text-buffer" to="Clear"/>
+              <set href="#text" attributeName="text-anchor" to="middle"/>
+            </use>
+            <use id="button-right" class="dialog-half-button-right" href="#square-button-icon" y="182" fill="coral">
+              <set href="#text" attributeName="text-buffer" to="Stop"/>
+              <set href="#text" attributeName="text-anchor" to="middle"/>
+            </use>
+          </svg>
+      </use>
+      <use id="item2" href="#panoramaview-item">
+        <rect width="100%" height="100%" fill="green" />x
+      </use>
+      <!-- Have enough pagination dots for your slides (extras are hidden) -->
+      <use id="pagination-dots" href="#pagination-widget" y="8">
+        <use href="#pagination-dot" />
+        <use href="#pagination-dot" />
+        <use href="#pagination-dot" />
+        <use href="#pagination-highlight-dot" />
+      </use>
     </use>
   </svg>
   <svg id="selection-screen"  display="inline">
@@ -59,12 +75,15 @@
       <set href="#header/text" attributeName="text-buffer" to="Stats Screen" />
       <set href="#header/text" attributeName="fill" to="fb-white" />
       <set href="#bottom-padding" attributeName="display" to="none" />
-      <text id="geolocation-label" class="sensor-label" x="50%" y="55">Coordinates</text>
+      <text id="geolocation-label1" class="sensor-label" x="50%" y="72">{ ... }</text>
+      <text id="geolocation-data6" class="sensor-data" x="50%" y="93">{ ... }</text>
+      <text id="geolocation-data7" class="sensor-data" x="50%" y="114">{ ... }</text>
+      <text id="geolocation-data8" class="sensor-data" x="50%" y="134">{ ... }</text>
     </use>
     <use id="endButton" class="button-bot"  href="#square-button-icon" fill="coral">
-      <set href="#text" attributeName="text-buffer" to="Return Main" />
+      <set href="#text" attributeName="text-buffer" to="Return Main"/>
       <set href="#text" attributeName="text-anchor" to="middle"/>
-      <set href="#image" attributeName="href" to="play.png" />
+      <set href="#image" attributeName="href" to="play.png"/>
     </use>
   </svg>
 </svg>
